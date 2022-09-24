@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias sf="ssh freeboxroot"
 alias sm="ssh marble"
 alias ss="ssh stampede"

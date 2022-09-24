@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -23,8 +23,6 @@ for filename in $@; do
 done
 IFS=$SAVEIFS
 
-
 echo "</body></html>" >> $HOME/blog/content/$directory/index.md
-
 echo "Shared at: https://www.rybarski.com/$directory"
 blogsync

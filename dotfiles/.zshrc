@@ -36,3 +36,5 @@ if [[ -e $custom_config ]]; then
 else
     >&2 echo "No custom config"
 fi
+
+alias cbr='cargo build --release'
