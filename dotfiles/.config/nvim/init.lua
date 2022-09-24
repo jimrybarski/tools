@@ -1,5 +1,3 @@
-vim.opt.completeopt = "menu,menuone"
-
 require("packer").startup({{
 	{ "wbthomason/packer.nvim" },
 	{ "ellisonleao/gruvbox.nvim" },
@@ -46,6 +44,7 @@ require("gruvbox").setup({
 vim.cmd("colorscheme gruvbox")
 
 vim.cmd("set number relativenumber")
+vim.cmd("set nobackup nowritebackup")
 vim.cmd("set signcolumn=yes")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
@@ -56,24 +55,25 @@ vim.cmd("set expandtab")
 -- Setup cmp
 local cmp = require("cmp")
 cmp.setup({
+    preselect = cmp.PreselectMode.None,
 	mapping = cmp.mapping.preset.insert({ 
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), 
-	        ["<Tab>"] = cmp.mapping(function(fallback)
+		['<CR>'] = cmp.mapping.confirm({ select = false }), 
+        ["<Tab>"] = cmp.mapping(function(fallback)
 	      if cmp.visible() then
-		cmp.select_next_item()
+            cmp.select_next_item()
 	      else
-		fallback()
+            fallback()
 	      end
-    end, { "i", "s" }),
-	        ["<S-Tab>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
-      end
-    end, { "i", "s" }),
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function()
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+            feedkey("<Plug>(vsnip-jump-prev)", "")
+          end
+        end, { "i", "s" }),
 	}),
 	snippet = {
 		expand = function(args)
@@ -82,14 +82,9 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "path" },
-	}, {
-		{ name = "buffer", keyword_length = 3 },
 	}),
 })
+
 
 -- Setup buffer-local keymaps / options for LSP buffers
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -114,22 +109,3 @@ require("rust-tools").setup({
 	}
 })
 
--- Keymaps for Luasnip
-local ls = require("luasnip")
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-	if ls.expand_or_jumpable() then
-		ls.expand_or_jump()
-	end
-end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-	if ls.jumpable(-1) then
-		ls.jump(-1)
-	end
-end, { silent = true })
-
-vim.keymap.set("i", "<C-l>", function()
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
-end)
