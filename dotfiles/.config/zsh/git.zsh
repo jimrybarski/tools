@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+export REVIEW_BASE="main"
+
 alias pull='git pull origin main'
 alias pullm='git pull origin master'
 alias push='git push origin main'

@@ -13,6 +13,4 @@ alias ll="exa -al --header --time-style long-iso"
 alias ls="exa"
 alias mv="mv -i"  # always prompt if overwriting a file
 alias v="nvim"
-alias eba=". env/bin/activate"
 alias randpass="openssl rand -base64 32"
-

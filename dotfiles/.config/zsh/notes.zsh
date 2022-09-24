@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-alias n='ssh notes'
-
 # Edit markdown notes at remote server with zsh/neovim
 function edit_note () {
     filename=$1
@@ -18,4 +16,3 @@ alias todo="edit_note todo"
 alias tv="edit_note tv"
 alias comedians="edit_note comedians"
 alias sch="edit_note sch"
-alias travel="edit_note checklist-travel"
