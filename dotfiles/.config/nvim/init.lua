@@ -13,7 +13,12 @@ require("packer").startup({{
 	{ "L3MON4D3/LuaSnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "simrat39/rust-tools.nvim" },
+    { "phaazon/hop.nvim" },
 }, config = {}})
+
+require("hop").setup()
+vim.api.nvim_set_keymap("n", "\\", ":HopChar1<CR>", { noremap = true })
+vim.api.nvim_set_keymap("o", "\\", ":HopChar1<CR>", { noremap = true })
 
 vim.o.background = "dark"
 require("gruvbox").setup({
