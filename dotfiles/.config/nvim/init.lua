@@ -13,7 +13,15 @@ require("packer").startup({{
 	{ "simrat39/rust-tools.nvim" },
     { "phaazon/hop.nvim" },
     { "kylechui/nvim-surround" },
+    {'nvim-telescope/telescope.nvim', tag = '0.1.0',},
+    {'nvim-lua/plenary.nvim'},
+    {'nvim-treesitter/nvim-treesitter'},
 }, config = {}})
+
+vim.g.mapleader = ' '
+
+vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true })
 
 require("hop").setup()
 vim.api.nvim_set_keymap("n", "\\", ":HopChar1<CR>", { noremap = true })
