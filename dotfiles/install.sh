@@ -12,6 +12,3 @@ for filename in `find . -type f | cut -c 3- | grep -v '\.git/' | grep -v "instal
     ln -s "$PWD/$filename" $HOME/$filename
     >&2 echo "linked $filename to $HOME/$filename"
 done
-
-# Install any new neovim plugins
-$(which vim) +PlugInstall +qall 2>/dev/null
