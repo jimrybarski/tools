@@ -14,11 +14,14 @@ require("packer").startup({{
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "simrat39/rust-tools.nvim" },
     { "phaazon/hop.nvim" },
+    { "kylechui/nvim-surround" },
 }, config = {}})
 
 require("hop").setup()
 vim.api.nvim_set_keymap("n", "\\", ":HopChar1<CR>", { noremap = true })
 vim.api.nvim_set_keymap("o", "\\", ":HopChar1<CR>", { noremap = true })
+
+require("nvim-surround").setup({})
 
 vim.o.background = "dark"
 require("gruvbox").setup({
