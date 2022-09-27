@@ -7,7 +7,7 @@ function edit_note () {
     if [[ -z "$suffix" ]]; then
         suffix="md"
     fi
-    n -t "/usr/local/bin/zsh -ic 'v $filename.$suffix'"
+    ssh notes -t "/usr/local/bin/zsh -ic 'v $filename.$suffix'"
 }
 alias en=edit_note
 
