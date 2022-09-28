@@ -16,9 +16,12 @@ require("packer").startup({{
     { "nvim-telescope/telescope.nvim", tag = '0.1.0',},
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter" },
+    { "terrortylor/nvim-comment" },
 }, config = {}})
 
 vim.g.mapleader = ' '
+
+require('nvim_comment').setup({comment_empty = false})
 
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true })

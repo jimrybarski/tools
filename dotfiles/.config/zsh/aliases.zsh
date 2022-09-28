@@ -15,4 +15,4 @@ alias ls="exa"
 alias mv="mv -i"  # always prompt if overwriting a file
 alias v="nvim"
 alias randpass="openssl rand -base64 32"
-alias jj="cd $WORK/jjjenes"
+alias jj="cd /stor/home/rybarskj/work/jjjenes"
