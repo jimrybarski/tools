@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 require("packer").startup({{
 	{ "wbthomason/packer.nvim" },
 	{ "ellisonleao/gruvbox.nvim" },
@@ -17,9 +20,12 @@ require("packer").startup({{
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter" },
     { "terrortylor/nvim-comment" },
+    { "lervag/vimtex" },
 }, config = {}})
 
-vim.g.mapleader = ' '
+vim.g.vimtex_view_method = 'zathura'
+-- Ignore warnings about relatively trivial things that latex spams us with
+vim.g.vimtex_quickfix_ignore_filters = {'Underfull', 'Overfull', 'Marginpar'}
 
 require('nvim_comment').setup({comment_empty = false})
 
