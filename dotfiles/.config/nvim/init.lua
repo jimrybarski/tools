@@ -21,7 +21,16 @@ require("packer").startup({{
     { "nvim-treesitter/nvim-treesitter" },
     { "terrortylor/nvim-comment" },
     { "lervag/vimtex" },
+    { "RRethy/vim-illuminate" },
 }, config = {}})
+
+require('illuminate').configure({
+    -- providers: provider used to get references in the buffer, ordered by priority
+    providers = {
+        'lsp',
+        'treesitter',
+    }
+})
 
 vim.g.vimtex_view_method = 'zathura'
 -- Ignore warnings about relatively trivial things that latex spams us with
