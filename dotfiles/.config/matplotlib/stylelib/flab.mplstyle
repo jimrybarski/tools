@@ -1,0 +1,57 @@
+figure.figsize : 10.0, 10.0
+
+axes.titlesize : 24
+axes.labelsize : 24
+axes.linewidth : 3
+
+lines.markeredgewidth : 2.0
+lines.linewidth : 3
+lines.markersize : 10
+
+patch.linewidth: 3
+
+xtick.labelsize : 22
+ytick.labelsize : 22
+
+xtick.major.top      : True   # draw x axis top major ticks
+xtick.major.bottom   : True   # draw x axis bottom major ticks
+xtick.minor.top      : True   # draw x axis top minor ticks
+xtick.minor.bottom : True # draw x axis bottom minor ticks
+
+legend.fontsize: 22
+
+# These are the standard colors from the finkelsteinlabpalette library available on PyPI
+axes.prop_cycle : cycler('color', [(.365, .647, .855), (.871, .812, .247), (.376, .741, .408), (.945, .345, .329), (.302, .302, .302), (.980, .643, .227), (.945, .486, .690), (.698, .569, .184), (.698, .463, .698)])
+
+#boxplot.flierprops.color           : black
+#boxplot.flierprops.marker          : o
+#boxplot.flierprops.markerfacecolor : none
+#boxplot.flierprops.markeredgecolor : black
+boxplot.flierprops.markeredgewidth : 3.0
+#boxplot.flierprops.markersize      : 6
+#boxplot.flierprops.linestyle       : none
+boxplot.flierprops.linewidth       : 3.0
+
+#boxplot.boxprops.color     : black
+boxplot.boxprops.linewidth : 3.0
+#boxplot.boxprops.linestyle : -
+
+#boxplot.whiskerprops.color     : black
+boxplot.whiskerprops.linewidth : 3.0
+#boxplot.whiskerprops.linestyle : -
+
+#boxplot.capprops.color     : black
+boxplot.capprops.linewidth : 3.0
+#boxplot.capprops.linestyle : -
+
+boxplot.medianprops.color     : (.365, .647, .855)
+boxplot.medianprops.linewidth : 3.0
+#boxplot.medianprops.linestyle : -
+
+boxplot.meanprops.color           : C2
+#boxplot.meanprops.marker          : ^
+#boxplot.meanprops.markerfacecolor : C2
+#boxplot.meanprops.markeredgecolor : C2
+#boxplot.meanprops.markersize      :  6
+#boxplot.meanprops.linestyle       : --
+boxplot.meanprops.linewidth       : 3.0
