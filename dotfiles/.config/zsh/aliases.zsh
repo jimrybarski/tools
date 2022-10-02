@@ -8,6 +8,7 @@ alias daysuntil="dateutils.ddiff -f '%Y years %d days' today"
 alias plug='vim +silent +"PackerInstall" +qall && vim +silent +"PackerClean" +qall'
 alias upgrade='sudo apt update && sudo apt upgrade -y && sudo apt-get autoremove'
 alias hur="htop -u $USER"
+alias buildnvim="make distclean; make -j8 CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/.local install"
 
 # CLI
 alias ll="exa -al --header --time-style long-iso"
