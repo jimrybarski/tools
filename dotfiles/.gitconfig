@@ -1,0 +1,16 @@
+[user]
+	email = jim@rybarski.com
+	name = Jim Rybarski
+	signingkey = 1D5AC3A349533745
+
+[alias]
+    # list files which have changed since REVIEW_BASE
+    # (REVIEW_BASE defaults to 'master' in my zshrc)
+    files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
+
+    # Same as above, but with a diff stat instead of just names
+    # (better for interactive use)
+    stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
+
+[core]
+	excludesFile = $HOME/.config/gitignore-global
