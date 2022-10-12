@@ -5,7 +5,7 @@ export LANG="en_US" # Set up the prompt
 export TERM=xterm-256color zsh
 
 PROMPT="%B%F{green}%n@%m%f%b [%*] [%(?.%F{green}√%f.%F{red}%?%f)] %d %F{blue}$%f "
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # enable vi mode
 bindkey -v 
