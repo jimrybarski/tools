@@ -21,7 +21,7 @@ xtick.minor.bottom : True # draw x axis bottom minor ticks
 legend.fontsize: 22
 
 # These are the standard colors from the finkelsteinlabpalette library available on PyPI
-axes.prop_cycle : cycler('color', [(.365, .647, .855), (.871, .812, .247), (.376, .741, .408), (.945, .345, .329), (.302, .302, .302), (.980, .643, .227), (.945, .486, .690), (.698, .569, .184), (.698, .463, .698)])
+axes.prop_cycle : cycler('color', ["#56B4E9", "#F0E442", "#E69F00", "#009E73", "#CC79A7", "#D55E00", "#0072B2"])
 
 #boxplot.flierprops.color           : black
 #boxplot.flierprops.marker          : o
