@@ -15,7 +15,7 @@ command=bash ~/tools/scripts/check-backups.sh
 interval=900
 
 [weather]
-command=~/code/i3block-utils/weather/target/release/weather KGRK
+command=~/.local/i3block-utils/weather/target/release/weather KGRK
 interval=900
 
 [volume]
@@ -28,11 +28,11 @@ signal=10
 interval=1200 # 20 minutes
 
 [wifi]
-command=~/code/i3block-utils/wifi/target/release/wifi
+command=~/.local/i3block-utils/wifi/target/release/wifi
 interval=10
 
 [battery]
-command=~/code/i3block-utils/battery/target/release/battery
+command=~/.local/i3block-utils/battery/target/release/battery
 interval=5
 
 [time]
