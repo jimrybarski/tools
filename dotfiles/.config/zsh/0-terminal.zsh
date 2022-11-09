@@ -5,7 +5,12 @@ export LANG="en_US" # Set up the prompt
 export TERM=xterm-256color zsh
 
 PROMPT="%B%F{green}%n@%m%f%b [%*] [%(?.%F{green}√%f.%F{red}%?%f)] %d %F{blue}$%f "
-export PATH="$HOME/.local/bin:$HOME/.ghcup/bin:$PATH"
+if [[ -e $HOME/.ghcup/bin ]]; then
+    export PATH="$HOME/.local/bin:$HOME/.ghcup/bin:$HOME/.cargo/bin:$PATH"
+else
+    export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+fi
+    
 
 # enable vi mode
 bindkey -v 

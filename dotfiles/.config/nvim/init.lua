@@ -132,6 +132,13 @@ require("rust-tools").setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = lsp_attach,
+        settings = {
+			["rust-analyzer"] = {
+				checkOnSave = {
+					command = "clippy"
+				}
+			}
+		}
 	}
 })
 
