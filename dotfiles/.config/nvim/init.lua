@@ -35,6 +35,7 @@ require('illuminate').configure({
 vim.g.vimtex_view_method = 'zathura'
 -- Ignore warnings about relatively trivial things that latex spams us with
 vim.g.vimtex_quickfix_ignore_filters = {'Underfull', 'Overfull', 'Marginpar'}
+vim.g.vimtex_view_forward_search_on_start = 0
 
 require('nvim_comment').setup({comment_empty = false})
 
