@@ -7,5 +7,5 @@ alias rc="$HOME/code/seqtools-cli/target/release/seqtools-cli rc"
 alias gc="$HOME/code/seqtools-cli/target/release/seqtools-cli gc"
 
 function pfam () {
-    rg $1 $DATA/pfam/all-domains.ssv
+    rg -i $1 $DATA/pfam/all-domains.ssv
 }

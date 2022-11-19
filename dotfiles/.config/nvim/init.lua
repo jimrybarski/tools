@@ -125,7 +125,14 @@ local lsp_attach = function(client, buf)
 	vim.api.nvim_buf_set_option(buf, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 	vim.api.nvim_buf_set_option(buf, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_option(buf, "tagfunc", "v:lua.vim.lsp.tagfunc")
+    vim.api.nvim_create_autocmd("BufWritePre", { 
+        callback = function()
+            vim.lsp.buf.format()
+        end,
+        buffer = buf,
+    })
 end
+
 
 -- Setup rust_analyzer via rust-tools.nvim
 require("rust-tools").setup({
