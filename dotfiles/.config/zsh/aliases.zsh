@@ -17,3 +17,6 @@ alias mv="mv -i"  # always prompt if overwriting a file
 alias v="nvim"
 alias randpass="openssl rand -base64 32"
 alias jj="cd /stor/home/rybarskj/work/jjjenes"
+
+# rando
+alias brown="play -c 2 --null synth brownnoise reverb bass 6 treble -3 > /dev/null 2>&1"
