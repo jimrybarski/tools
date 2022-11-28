@@ -9,3 +9,5 @@ alias gc="$HOME/code/seqtools-cli/target/release/seqtools-cli gc"
 function pfam () {
     rg -i $1 $DATA/pfam/all-domains.ssv
 }
+
+alias vpn='sudo openconnect vpn.utexas.edu -u rybarskj -b'
