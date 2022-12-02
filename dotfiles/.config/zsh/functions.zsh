@@ -6,3 +6,7 @@ function fixspaces() {
         do mv -- "$file" "${file// /_}"; 
     done
 }
+
+function cpod() {
+    python3 $HOME/documents/chinese/cpod.py < $HOME/downloads/vocabulary_export.csv | sort -u > $HOME/documents/chinese/vocab.tsv
+}
