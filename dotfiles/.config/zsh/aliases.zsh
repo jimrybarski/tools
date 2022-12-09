@@ -20,3 +20,4 @@ alias jj="cd /stor/home/rybarskj/work/jjjenes"
 
 # rando
 alias brown="play -c 2 --null synth brownnoise reverb bass 6 treble -3 > /dev/null 2>&1"
+alias sum="awk '{s+=\$1} END { print s }'"
