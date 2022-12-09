@@ -5,7 +5,7 @@ SRC=$WORK/$CURRENT_PROJECT/src
 LIB=$SRC/libmempads
 DATA=$WORK/$CURRENT_PROJECT/data
 FIGURES=$WORK/$CURRENT_PROJECT/figures
-REPORTS=$FIGURES/reports
+REPORTS=$FIGURES/150kb-reports
 FIGURE_DATA=$WORK/$CURRENT_PROJECT/figure-data
 ANALYSIS=$WORK/$CURRENT_PROJECT/analysis
 SCRATCH=$WORK/$CURRENT_PROJECT/scratch
@@ -25,5 +25,6 @@ alias rep="cd $REPORTS"
 
 alias pandoc="$HOME/.cabal/bin/pandoc"
 
-lib
+cd $WORK/$CURRENT_PROJECT
+eba
 clear
