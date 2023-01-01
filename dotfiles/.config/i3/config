@@ -65,7 +65,7 @@ bindsym $mod+j focus down
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 bindsym $mod+Return exec ~/.cargo/bin/alacritty
-bindsym $mod+Shift+Return exec kitty
+bindsym $mod+Shift+Return exec /usr/bin/cool-retro-term
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Right move right
