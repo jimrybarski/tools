@@ -21,11 +21,12 @@ tags = tuple(map(str.strip, input("Tags (space separated): ").lower().split()))
 tags = ", ".join([f"\"{tag}\"" for tag in tags])
 
 slugified_title = slugify(title)
-filename = f"{dt}-{slugified_title}.md"
+filename = f"{slugified_title}.md"
 
 header = f"""+++
 title="{title}"
 description="{desc}"
+date="{dt}"
 [taxonomies]
 tags = [{tags}]
 +++\n\n"""
