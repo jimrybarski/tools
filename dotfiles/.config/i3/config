@@ -28,6 +28,11 @@ bindsym $mod+q kill
 bindsym $mod+t exec /usr/bin/thunar
 bindsym $mod+v split v
 
+# quick access to remote files
+bindsym $mod+Ctrl+z exec alacritty -e /usr/bin/zsh -ic "en zhongwen"
+bindsym $mod+Ctrl+t exec alacritty -e /usr/bin/zsh -ic "en todo"
+bindsym $mod+Ctrl+l exec alacritty -e /usr/bin/zsh -ic "en scilog"
+
 bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+z exec ~/.local/bin/zotero
