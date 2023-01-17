@@ -3,15 +3,15 @@ separator_block_width=15
 markup=none
 
 [rybarski_com_up]
-command=bash ~/tools/scripts/rybarski-com-status.sh
+command=~/tools/scripts/rybarski-com-status.sh
 interval=86400
 
 [dotfileuptodate]
-command=bash ~/tools/scripts/are-repos-uptodate.sh
+command=~/tools/scripts/are-repos-uptodate.sh
 interval=600
 
 [backups]
-command=bash ~/tools/scripts/check-backups.sh
+command=~/tools/scripts/check-backups.sh
 interval=900
 
 [weather]
