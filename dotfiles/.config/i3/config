@@ -28,10 +28,33 @@ bindsym $mod+q kill
 bindsym $mod+t exec /usr/bin/thunar
 bindsym $mod+v split v
 
-# quick access to remote files
-bindsym $mod+Ctrl+z exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en zhongwen"
-bindsym $mod+Ctrl+t exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en todo"
-bindsym $mod+Ctrl+l exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en scilog"
+# quick access to files
+bindsym $mod+$alt+a exec libreoffice $HOME/documents/finances.ods
+bindsym $mod+$alt+b exec notify-send 'not mapped'
+bindsym $mod+$alt+c exec notify-send 'not mapped'
+bindsym $mod+$alt+d exec notify-send 'not mapped'
+bindsym $mod+$alt+e exec notify-send 'not mapped'
+bindsym $mod+$alt+f exec notify-send 'not mapped'
+bindsym $mod+$alt+g exec notify-send 'not mapped'
+bindsym $mod+$alt+h exec notify-send 'not mapped'
+bindsym $mod+$alt+i exec notify-send 'not mapped'
+bindsym $mod+$alt+j exec notify-send 'not mapped'
+bindsym $mod+$alt+k exec notify-send 'not mapped'
+bindsym $mod+$alt+l exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en scilog"
+bindsym $mod+$alt+m exec notify-send 'not mapped'
+bindsym $mod+$alt+n exec notify-send 'not mapped'
+bindsym $mod+$alt+o exec notify-send 'not mapped'
+bindsym $mod+$alt+p exec notify-send 'not mapped'
+bindsym $mod+$alt+q exec notify-send 'not mapped'
+bindsym $mod+$alt+r exec notify-send 'not mapped'
+bindsym $mod+$alt+s exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en sch"
+bindsym $mod+$alt+t exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en todo"
+bindsym $mod+$alt+u exec notify-send 'not mapped'
+bindsym $mod+$alt+v exec notify-send 'not mapped'
+bindsym $mod+$alt+w exec notify-send 'not mapped'
+bindsym $mod+$alt+x exec notify-send 'not mapped'
+bindsym $mod+$alt+y exec notify-send 'not mapped'
+bindsym $mod+$alt+z exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en zhongwen"
 
 bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+Shift+r restart
@@ -44,8 +67,9 @@ bindsym $mod+Ctrl+i exec firefox -new-instance -P "alternative"
 bindsym $mod+Ctrl+f exec firefox -new-instance -P "finances"
 bindsym $mod+Ctrl+w exec firefox -new-instance -P "work"
 
-# Quickly open important files
-bindsym $mod+$alt+a exec libreoffice $HOME/documents/finances.ods
+# Timer
+bindsym $mod+Ctrl+7 exec bash $HOME/tools/scripts/tea-timer.sh
+
 
 bindsym $mod+Shift+0 move container to workspace $workspace10
 bindsym $mod+Shift+1 move container to workspace $workspace1
