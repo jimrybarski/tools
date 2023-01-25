@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-minutes="7m"
+minutes="$1m"
 notify-send "Timer set for $minutes"
 sleep "$minutes"
 notify-send \
