@@ -14,3 +14,6 @@
 
 [core]
 	excludesFile = $HOME/.config/gitignore-global
+
+[merge]
+    tool = vimdiff
