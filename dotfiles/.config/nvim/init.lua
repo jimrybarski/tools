@@ -22,6 +22,7 @@ require("packer").startup({{
     { "terrortylor/nvim-comment" },
     { "lervag/vimtex" },
     { "RRethy/vim-illuminate" },
+    { "tpope/vim-fugitive" },
 }, config = {}})
 
 require('illuminate').configure({
