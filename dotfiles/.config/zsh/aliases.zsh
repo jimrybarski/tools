@@ -26,4 +26,4 @@ alias sum="awk '{s+=\$1} END { print s }'"
 # programming
 alias gipython="cp $HOME/.local/gitignore/Python.gitignore .gitignore"
 alias girust="cp $HOME/.local/gitignore/Rust.gitignore .gitignore"
-alias pyenv="python3 -m venv .env && . .env/bin/activate && pip install wheel && pip install 'python-lsp-server[all]'"
+alias pyenv="python3 -m venv env && . env/bin/activate && pip install wheel && pip install 'python-lsp-server[all]'"
