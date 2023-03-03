@@ -22,3 +22,8 @@ alias bin="cd $HOME/.local/bin"
 # rando
 alias brown="play -c 2 --null synth brownnoise reverb bass 6 treble -3 > /dev/null 2>&1"
 alias sum="awk '{s+=\$1} END { print s }'"
+
+# programming
+alias gipython="cp $HOME/.local/gitignore/Python.gitignore .gitignore"
+alias girust="cp $HOME/.local/gitignore/Rust.gitignore .gitignore"
+alias pyenv="python3 -m venv env && . env/bin/activate && pip install wheel && pip install 'python-lsp-server[all]'"
