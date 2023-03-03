@@ -24,7 +24,4 @@ alias s="cd $SCRATCH"
 alias rep="cd $REPORTS"
 
 alias pandoc="$HOME/.cabal/bin/pandoc"
-
-cd $WORK/$CURRENT_PROJECT
-eba
-clear
+export PATH="~/miniconda3/bin:$PATH"
