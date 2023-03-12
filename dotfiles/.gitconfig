@@ -15,6 +15,7 @@
 [core]
 	excludesFile = $HOME/.config/gitignore-global
 	editor = nvim
+	hooksPath = .githooks
 
 [merge]
     tool = vimdiff
