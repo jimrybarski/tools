@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Runs shellcheck on every installation script.
+
+shellcheck_output=$(find installation -type f -name '*.sh' -exec shellcheck {} \; 2>&1)
+if [[ -n "$shellcheck_output" ]]; then
+    >&2 echo "$shellcheck_output" 
+    >&2 echo ""
+    >&2 echo "Shellcheck failed"
+    exit 1
+fi
