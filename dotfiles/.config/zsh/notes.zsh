@@ -12,10 +12,19 @@ function derive_note_filename () {
 
 function edit_note () {
     filename=$(derive_note_filename $1 $2)
-    ssh notes -t "/usr/local/bin/zsh -ic 'v ~/notes/$filename'"
+    directory=$(dirname $filename)
+    ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/notes/$directory && v ~/notes/$filename'"
 }
 
 alias en=edit_note
+
+function edit_paper () {
+    filename=$(derive_note_filename $1 $2)
+    directory=$(dirname $filename)
+    ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/papers/$directory && if [[ ! -e ~/papers/$filename ]]; then echo $1 > ~/papers/$filename; fi; v ~/papers/$filename'"
+}
+
+alias ep=edit_paper
 
 function echo_note () {
     filename=$(derive_note_filename $1 $2)
@@ -27,4 +36,4 @@ alias echon=echo_note
 alias todo="edit_note todo"
 alias tv="edit_note tv"
 alias comedians="edit_note comedians"
-alias sch="edit_note sch"
+alias sch="edit_note $(date +'%F')"
