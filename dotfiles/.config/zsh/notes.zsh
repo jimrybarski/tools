@@ -12,7 +12,7 @@ function derive_note_filename () {
 
 function edit_note () {
     filename=$(derive_note_filename $1 $2)
-    ssh notes -t "/usr/local/bin/zsh -ic 'v $filename'"
+    ssh notes -t "/usr/local/bin/zsh -ic 'v ~/notes/$filename'"
 }
 
 alias en=edit_note

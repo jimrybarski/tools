@@ -44,6 +44,8 @@ require('nvim_comment').setup({comment_empty = false})
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true })
 
+vim.api.nvim_set_keymap("n", "<leader>b", 'daW:read !curl -LH "Accept: text/bibliography; style=bibtex" http://dx.doi.org/<C-r>" 2>/dev/null <CR><CR>kdd0x', { noremap = true })
+
 require("hop").setup()
 vim.api.nvim_set_keymap("n", "\\", ":HopChar1<CR>", { noremap = true })
 vim.api.nvim_set_keymap("o", "\\", ":HopChar1<CR>", { noremap = true })
