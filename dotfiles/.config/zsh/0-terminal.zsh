@@ -11,6 +11,9 @@ else
     export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 fi
     
+if [[ -e "$HOME"/.local/miniconda3/bin ]]; then
+    export PATH="$PATH:$HOME/.local/miniconda3/bin"
+fi
 
 # enable vi mode
 bindkey -v 
