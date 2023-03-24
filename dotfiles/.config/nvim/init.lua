@@ -57,7 +57,10 @@ require("gruvbox").setup({
   undercurl = true,
   underline = true,
   bold = true,
-  italic = false,
+  italic = {
+      strings = true,
+      comments = true,
+  },
   strikethrough = true,
   invert_selection = false,
   invert_signs = false,
@@ -65,10 +68,6 @@ require("gruvbox").setup({
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
   contrast = "soft", -- can be "hard", "soft" or empty string
-  overrides = {
-      Comment = { italic = true },
-      String = { italic = true },
-  },
   dim_inactive = false,
   transparent_mode = false,
 })
