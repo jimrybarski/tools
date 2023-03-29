@@ -37,6 +37,8 @@ function log_measurement () {
     ssh notes -t "echo $data >> ~/notes/measurements.ssv"
 }
 
+alias w=log_measurement
+
 # notes
 alias todo="edit_note todo"
 alias tv="edit_note tv"
