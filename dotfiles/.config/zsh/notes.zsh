@@ -39,6 +39,8 @@ function log_measurement () {
 
 alias w=log_measurement
 
+alias echow="ssh notes 'cat ~/notes/measurements.ssv'"
+
 # notes
 alias todo="edit_note todo"
 alias tv="edit_note tv"
