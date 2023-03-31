@@ -32,6 +32,15 @@ function echo_note () {
 }
 alias echon=echo_note
 
+function log_measurement () {
+    data="$(date +'%F') $1"
+    ssh notes -t "echo $data >> ~/notes/measurements.ssv"
+}
+
+alias w=log_measurement
+
+alias echow="ssh notes 'cat ~/notes/measurements.ssv'"
+
 # notes
 alias todo="edit_note todo"
 alias tv="edit_note tv"

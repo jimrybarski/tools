@@ -10,3 +10,8 @@ function fixspaces() {
 function cpod() {
     python3 $HOME/documents/chinese/cpod.py < $HOME/downloads/vocabulary_export.csv | sort -u > $HOME/documents/chinese/vocab.tsv
 }
+
+# Remove a bad known SSH host
+function remove_known_host() {
+    ssh-keygen -f "/home/jim/.ssh/known_hosts" -R "$1"
+}
