@@ -39,6 +39,10 @@ function log_measurement () {
 
 alias w=log_measurement
 
+function chanki () {
+    ssh notes "rg 'anki: (\d+)/(\d+)' -r'\$1 \$2' ~/notes/*md" | sd '/root/notes/' '' | sd '.md:' ' '
+}
+
 # notes
 alias todo="edit_note todo"
 alias tv="edit_note tv"
