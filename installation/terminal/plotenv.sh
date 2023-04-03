@@ -2,8 +2,8 @@
 #
 # Installs a virtualenv that the Python scripts in this repo will use.
 
-pushd "$HOME"/.local
+pushd "$HOME"/.local || exit 1
 python3 -m venv scriptenv
-popd
+popd || exit 1
 
 "$HOME"/.local/scriptenv/bin/pip install -r "$HOME"/tools/scripts/requirements.txt
