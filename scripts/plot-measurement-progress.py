@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 import matplotlib
+import numpy as np
+from scipy import stats
 import sys
 import time
 import datetime
-from okabeito import blue
+from okabeito import blue, red
 
 matplotlib.style.use("flab")
 
@@ -21,6 +23,13 @@ for line in sys.stdin:
     xs.append(date)
     ys.append(float(measurement))
 
+xs = np.array(xs)
+ys = np.array(ys)
+
+res = stats.linregress(xs, ys)
+
 fig, ax = plt.subplots()
 ax.scatter(xs, ys, s=64, color=blue)
+ax.plot(xs, res.intercept + res.slope*xs, red)
+ax.set_title(f"Slope: {res.slope}\np-value: {res.pvalue}")
 plt.show()
