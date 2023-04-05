@@ -39,6 +39,7 @@ function log_measurement () {
 
 alias w=log_measurement
 alias echow="ssh notes 'cat ~/notes/measurements.ssv'"
+alias plotw="echow | $HOME/.local/scriptenv/bin/python $HOME/tools/scripts/plot-measurement-progress.py"
 
 function chanki () {
     ssh notes "rg 'anki: (\d+)/(\d+)' -r'\$1 \$2' ~/notes/*md" | sd '/root/notes/' '' | sd '.md:' ' '
