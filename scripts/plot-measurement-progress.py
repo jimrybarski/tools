@@ -11,7 +11,7 @@ matplotlib.style.use("flab")
 
 
 def convert_date(d):
-    return time.mktime(datetime.datetime.strptime(d, "%Y-%m-%d").timetuple())
+    return time.mktime(datetime.datetime.strptime(d, "%Y-%m-%d").timetuple()) / 86400.0
 
 
 xs = []
@@ -20,7 +20,9 @@ ys = []
 for line in sys.stdin:
     raw_date, measurement = line.strip().split(" ")
     date = convert_date(raw_date)
-    xs.append(date)
+    if not xs:
+        first_date = date
+    xs.append(date - first_date)
     ys.append(float(measurement))
 
 xs = np.array(xs)
