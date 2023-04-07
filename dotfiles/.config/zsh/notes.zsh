@@ -44,7 +44,7 @@ alias plotw="echow | $HOME/.local/scriptenv/bin/python $HOME/tools/scripts/plot-
 function chanki () {
     ssh notes "rg 'anki: (\d+)/(\d+)' -r'\$1 \$2' ~/notes/*md" | sd '/root/notes/' '' | sd '.md:' ' '
 }
-
+alias plotanki="chanki | $HOME/.local/scriptenv/bin/python $HOME/tools/scripts/plot-anki-progress.py"
 
 # notes
 alias todo="edit_note todo"
