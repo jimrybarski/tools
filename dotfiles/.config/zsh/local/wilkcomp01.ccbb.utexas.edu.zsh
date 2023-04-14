@@ -25,3 +25,5 @@ alias rep="cd $REPORTS"
 
 alias pandoc="$HOME/.cabal/bin/pandoc"
 export PATH="~/miniconda3/bin:$PATH"
+alias m="tmuxp load --yes $HOME/tools/dotfiles/.config/tmuxp-mempads.yml"
+alias nm="tmuxp load --yes $HOME/tools/dotfiles/.config/tmuxp-new-mempads.yml"
