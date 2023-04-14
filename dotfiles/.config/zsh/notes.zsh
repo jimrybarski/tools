@@ -32,6 +32,20 @@ function echo_note () {
 }
 alias echon=echo_note
 
+function log_measurement () {
+    data="$(date +'%F') $1"
+    ssh notes -t "echo $data >> ~/notes/measurements.ssv"
+}
+
+alias w=log_measurement
+alias echow="ssh notes 'cat ~/notes/measurements.ssv'"
+alias plotw="echow | $HOME/.local/scriptenv/bin/python $HOME/tools/scripts/plot-measurement-progress.py"
+
+function chanki () {
+    ssh notes "rg 'anki: (\d+)/(\d+)' -r'\$1 \$2' ~/notes/*md" | sd '/root/notes/' '' | sd '.md:' ' '
+}
+alias plotanki="chanki | $HOME/.local/scriptenv/bin/python $HOME/tools/scripts/plot-anki-progress.py"
+
 # notes
 alias todo="edit_note todo"
 alias tv="edit_note tv"
