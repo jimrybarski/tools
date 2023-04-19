@@ -13,5 +13,5 @@ function cpod() {
 
 # Remove a bad known SSH host
 function remove_known_host() {
-    ssh-keygen -f "/home/jim/.ssh/known_hosts" -R "$1"
+    ssh-keygen -f "$HOME/.ssh/known_hosts" -R "$1"
 }
