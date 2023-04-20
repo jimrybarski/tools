@@ -1,7 +1,7 @@
 figure.figsize : 10.0, 10.0
 
 axes.titlesize : 24
-axes.labelsize : 24
+axes.labelsize : 22
 axes.linewidth : 3
 
 lines.markeredgewidth : 2.0

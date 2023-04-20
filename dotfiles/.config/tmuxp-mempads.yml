@@ -1,0 +1,24 @@
+session_name: mempads
+windows:
+  - window_name: vim
+    layout: even-horizontal
+    shell_command_before:
+      - cd ~/work/final-mempads && eba && lib && clear
+    panes:
+      - shell_command: 
+          - clear
+          - v
+      - shell_command:
+          - cargo test
+  - window_name: project
+    layout: even-horizontal
+    shell_command_before:
+      - cd ~/work/final-mempads && eba && clear
+    panes:
+      - shell_command:
+          - cd output
+          - clear
+          - ls
+      - shell_command:
+          - clear
+          - ls
