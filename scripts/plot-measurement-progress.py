@@ -28,10 +28,14 @@ for line in sys.stdin:
 xs = np.array(xs)
 ys = np.array(ys)
 
+latest = ys[-30:]
+mean = round(np.mean(latest), 1)
+std = round(np.std(latest), 1)
+
 res = stats.linregress(xs, ys)
 
 fig, ax = plt.subplots()
 ax.scatter(xs, ys, s=64, color=blue)
 ax.plot(xs, res.intercept + res.slope*xs, red)
-ax.set_title(f"Slope: {res.slope}\np-value: {res.pvalue}")
+ax.set_title(f"Slope: {res.slope}\np-value: {res.pvalue}\nCurrent: {mean} +/- {std}")
 plt.show()
