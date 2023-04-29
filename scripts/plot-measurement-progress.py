@@ -31,12 +31,11 @@ ys = np.array(ys)
 LATEST_DAYS = 14
 latest_ys = ys[-LATEST_DAYS:]
 latest_xs = xs[-LATEST_DAYS:]
-mean = round(np.mean(latest_ys), 1)
-std = round(np.std(latest_ys), 1)
 res = stats.linregress(latest_xs, latest_ys)
+mean = round(res.intercept + res.slope*xs[-1], 1)
 
 fig, ax = plt.subplots()
 ax.scatter(xs, ys, s=64, color=blue)
 ax.plot(latest_xs, res.intercept + res.slope*latest_xs, red)
-ax.set_title(f"Slope: {res.slope}\np-value: {res.pvalue}\nCurrent: {mean} +/- {std}")
+ax.set_title(f"Slope: {res.slope}\np-value: {res.pvalue}\nCurrent: {mean}")
 plt.show()
