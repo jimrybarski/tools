@@ -5,7 +5,7 @@ from scipy import stats
 import sys
 import time
 import datetime
-from okabeito import blue, red
+from okabeito import blue, red, green
 
 matplotlib.style.use("flab")
 
@@ -28,14 +28,18 @@ for line in sys.stdin:
 xs = np.array(xs)
 ys = np.array(ys)
 
+res_all = stats.linregress(xs, ys)
+
 LATEST_DAYS = 14
 latest_ys = ys[-LATEST_DAYS:]
 latest_xs = xs[-LATEST_DAYS:]
 res = stats.linregress(latest_xs, latest_ys)
+
 mean = round(res.intercept + res.slope*xs[-1], 1)
 
 fig, ax = plt.subplots()
 ax.scatter(xs, ys, s=64, color=blue)
 ax.plot(latest_xs, res.intercept + res.slope*latest_xs, red)
-ax.set_title(f"Slope: {res.slope}\np-value: {res.pvalue}\nCurrent: {mean}")
+ax.plot(xs, res_all.intercept + res_all.slope*xs, green)
+ax.set_title(f"Per year: {round(res.slope * 365, 2)} p-value: {round(res.pvalue, 3)}\nAll: {round(res_all.slope * 365, 2)} p-value: {round(res_all.pvalue, 3)}\nCurrent: {mean}")
 plt.show()
