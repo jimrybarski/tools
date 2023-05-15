@@ -81,6 +81,7 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
 
+vim.api.nvim_create_autocmd("FileType", { pattern = { "tsv", "csv" }, command = "set noexpandtab" })
 
 -- Setup cmp
 local cmp = require("cmp")
