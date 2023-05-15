@@ -197,7 +197,6 @@ require'lsp_signature'.setup({
   move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
 })
 
-require("lspconfig").pylsp.setup{}
 require("lspconfig").texlab.setup{}
 
 -- Setup rust_analyzer via rust-tools.nvim
