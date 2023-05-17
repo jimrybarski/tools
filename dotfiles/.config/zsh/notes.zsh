@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+alias c="en jsk-1 tsv"
+
 # Edit markdown notes at remote server with zsh/neovim
 function derive_note_filename () {
     filename=$1
