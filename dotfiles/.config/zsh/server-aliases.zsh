@@ -7,5 +7,5 @@ alias sw="ssh wilke"
 alias sw2="ssh wilke2"
 
 function memscp () {
-    scp -r wilke:~/work/final-mempads/$1 $2
+    rsync -ruv wilke:~/work/final-mempads/$1 $2
 }
