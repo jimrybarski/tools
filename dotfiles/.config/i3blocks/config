@@ -15,7 +15,7 @@ command=~/tools/scripts/check-backups.sh
 interval=900
 
 [weather]
-command=~/.local/i3block-utils/weather/target/release/weather KGRK
+command=~/.local/i3block-utils/weather/target/release/weather KBOS
 interval=900
 
 [volume]
