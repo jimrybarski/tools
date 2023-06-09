@@ -71,8 +71,8 @@ require("gruvbox").setup({
   dim_inactive = false,
   transparent_mode = false,
 })
-vim.cmd("colorscheme gruvbox")
 
+vim.cmd("colorscheme gruvbox")
 vim.cmd("set number relativenumber")
 vim.cmd("set nobackup nowritebackup")
 vim.cmd("set signcolumn=yes")
@@ -235,4 +235,3 @@ require("rust-tools").setup({
 		}
 	}
 })
-
