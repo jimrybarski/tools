@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-alias c="en jsk-1 tsv"
-
 # Edit markdown notes at remote server with zsh/neovim
 function derive_note_filename () {
     filename=$1
@@ -48,13 +46,8 @@ function wp() {
     plotw
 }
 
-function chanki () {
-    ssh notes "rg 'anki: (\d+)/(\d+)' -r'\$1 \$2' ~/notes/*md" | sd '/root/notes/' '' | sd '.md:' ' '
-}
-alias plotanki="chanki | $HOME/.local/scriptenv/bin/python $HOME/tools/scripts/plot-anki-progress.py"
-
 # notes
 alias todo="edit_note todo"
 alias tv="edit_note tv"
 alias comedians="edit_note comedians"
-alias sch="edit_note $(date +'%F')"
+alias j="edit_note $(date +'%F')"
