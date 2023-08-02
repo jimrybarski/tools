@@ -142,7 +142,7 @@ vim.keymap.set("n", "g[", vim.diagnostic.goto_next, {})
 vim.keymap.set("n", "g]", vim.diagnostic.goto_prev, {})
 vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
 vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
-vim.keymap.set("n", "gf", vim.lsp.buf.format, {})
+vim.keymap.set("n", "go", vim.lsp.buf.format, {})
 
 -- Setup buffer-local keymaps / options for LSP buffers
 -- local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
