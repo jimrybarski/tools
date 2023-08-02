@@ -15,6 +15,14 @@ if [[ -e "$HOME"/.local/miniconda3/bin ]]; then
     export PATH="$PATH:$HOME/.local/miniconda3/bin"
 fi
 
+if [[ -e "$HOME"/homebrew/bin ]]; then
+    export PATH="$PATH:$HOME/homebrew/bin"
+fi
+
+if [[ -e "$HOME"/Library/Python/3.9/bin ]]; then
+    export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+fi
+
 # enable vi mode
 bindkey -v 
 # only wait 0.1 sec before entering normal mode

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+operating_system="$(uname)"
+
 for filename in `find . -type f | cut -c 3- | grep -v '\.git/' | grep -v "install.sh"`; do
     >&2 echo "$filename"
     if [ -z $filename ]; then

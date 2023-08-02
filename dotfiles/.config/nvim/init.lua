@@ -1,6 +1,19 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 require("packer").startup({{
 	{ "wbthomason/packer.nvim" },
 	{ "ellisonleao/gruvbox.nvim" },
@@ -25,6 +38,10 @@ require("packer").startup({{
     { "tpope/vim-fugitive" },
 }, config = {}})
 
+if packer_bootstrap then
+    require('packer').sync()
+end
+
 require('illuminate').configure({
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
@@ -44,7 +61,7 @@ require('nvim_comment').setup({comment_empty = false})
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<leader>b", 'daW:read !curl -LH "Accept: text/bibliography; style=bibtex" http://dx.doi.org/<C-r>" 2>/dev/null <CR><CR>kdd0x', { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>b", 'daW:read !curl -LH "Accept: text/bibliography; style=bibtex" http://dx.doi.org/<C-r>" 2>/dev/null <CR><CR>', { noremap = true })
 
 require("hop").setup()
 vim.api.nvim_set_keymap("n", "\\", ":HopChar1<CR>", { noremap = true })
@@ -80,6 +97,7 @@ vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
+vim.cmd("set textwidth=120")
 
 vim.api.nvim_create_autocmd("FileType", { pattern = { "tsv", "csv" }, command = "set noexpandtab" })
 
@@ -165,11 +183,11 @@ require'lsp_signature'.setup({
   
   floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
 
-  floating_window_above_cur_line = false, -- try to place the floating above the current line when possible Note:
+  floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
   -- will set to true when fully tested, set to false will use whichever side has more space
   -- this setting will be helpful if you do not want the PUM and floating win overlap
 
-  floating_window_off_x = 1, -- adjust float windows x position.
+  floating_window_off_x = 0, -- adjust float windows x position.
   floating_window_off_y = 0, -- adjust float windows y position. e.g -2 move window up 2 lines; 2 move down 2 lines
                               -- can be either number or function, see examples
 

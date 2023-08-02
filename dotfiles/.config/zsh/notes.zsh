@@ -15,15 +15,36 @@ function derive_note_filename () {
 function edit_note () {
     filename=$(derive_note_filename $1 $2)
     directory=$(dirname $filename)
-    ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/notes/$directory && v ~/notes/$filename'"
+    osname=$(uname)
+    if [[ "$osname" != "Darwin" ]]; then
+        # ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/notes/$directory && v ~/notes/$filename'"
+    else
+        mkdir -p "$HOME/notes/$directory" && v "$HOME/notes/$filename"
+    fi
 }
 
 alias en=edit_note
 
 function edit_paper () {
-    filename=$(derive_note_filename $1 $2)
+    filename=$(derive_note_filename $1)
     directory=$(dirname $filename)
-    ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/papers/$directory && if [[ ! -e ~/papers/$filename ]]; then echo $1 > ~/papers/$filename; fi; v ~/papers/$filename'"
+    echo "filename: $filename"
+    osname=$(uname)
+    if [[ "$osname" != "Darwin" ]]; then
+        ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/papers/$directory && if [[ ! -e ~/papers/$filename ]]; then echo $1 > ~/papers/$filename; fi; v ~/papers/$filename'"
+    else
+        # since DOIs have a forward slash, we'll have a directory for each publisher. we could alternatively change the
+        # slash to something else but I think this is kinda neat and not worth solving
+        echo "making dir $HOME/papers/$directory"
+        mkdir -p "$HOME/papers/$directory"
+        if [[ ! -e "$HOME/papers/$filename" ]]; then
+            echo "writing DOI $1 to file $HOME/papers/$filename"
+            echo $1 > "$HOME/papers/$filename"
+            nvim "$HOME/papers/$filename"
+        else
+            nvim "$HOME/papers/$filename"
+        fi
+    fi
 }
 
 alias ep=edit_paper
