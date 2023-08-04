@@ -91,13 +91,12 @@ require("gruvbox").setup({
 
 vim.cmd("colorscheme gruvbox")
 vim.cmd("set number relativenumber")
-vim.cmd("set nobackup nowritebackup")
+vim.cmd("set nobackup nowritebackup noswapfile")
 vim.cmd("set signcolumn=yes")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
-vim.cmd("set textwidth=120")
 
 vim.api.nvim_create_autocmd("FileType", { pattern = { "tsv", "csv" }, command = "set noexpandtab" })
 

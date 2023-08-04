@@ -15,7 +15,7 @@ function edit_note () {
     directory=$(dirname $filename)
     osname=$(uname)
     if [[ "$osname" != "Darwin" ]]; then
-        # ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/notes/$directory && v ~/notes/$filename'"
+        ssh notes -t "/usr/local/bin/zsh -ic 'mkdir -p ~/notes/$directory && v ~/notes/$filename'"
     else
         mkdir -p "$HOME/notes/$directory" && v "$HOME/notes/$filename"
     fi
