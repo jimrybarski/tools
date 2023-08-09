@@ -56,7 +56,7 @@ bindsym $mod+$alt+x exec notify-send 'not mapped'
 bindsym $mod+$alt+y exec notify-send 'not mapped'
 bindsym $mod+$alt+z exec $HOME/.cargo/bin/alacritty -e /usr/bin/zsh -ic "en zhongwen"
 
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Ctrl+e exec i3-msg exit
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+z exec $HOME/.local/bin/zotero
 bindsym --release Shift+Print exec scrot -e 'xclip -selection clipboard -t image/png -i $f' -s '/home/jim/pictures/screenshots/screenshot_%Y%m%d_%H%M%S.png' 
